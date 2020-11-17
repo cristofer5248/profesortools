@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Periodo implements Serializable {
@@ -20,9 +21,18 @@ public class Periodo implements Serializable {
 	@Column(length = 2)
 	private int numero;
 	
+	@Column(length = 40, unique = true)
+	@Size(max = 40)
+	private String nombre;
+	
 	@ManyToOne(fetch =FetchType.LAZY )
 	private Materia materia;
 	
+	@ManyToOne(fetch =FetchType.LAZY )
+	private Nota nota;
+	
+	@Column(length = 2)
+	private int limite;	
 	
 	
 	private double total;
@@ -71,6 +81,18 @@ public class Periodo implements Serializable {
 
 	public void setTotal(double total) {
 		this.total = total;
+	}
+
+
+
+	public int getLimite() {
+		return limite;
+	}
+
+
+
+	public void setLimite(int limite) {
+		this.limite = limite;
 	}
 
 

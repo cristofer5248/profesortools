@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class AlumnoMateria implements Serializable {
+public class AlumnoPeriodo implements Serializable {
 
 	
 
