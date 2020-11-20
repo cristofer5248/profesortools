@@ -3,7 +3,7 @@
 	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head th:fragment="head">
 <meta charset="UTF-8" />
-<title th:text="'DySumar- ' + ${titulo}"></title>
+<title th:text="'ProfesorTool - ' + ${titulo}"></title>
 
 <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
 <link rel="stylesheet" th:href="@{/css/jquery-ui.min.css}" />
@@ -27,7 +27,7 @@
 	<header th:fragment="header">
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark"
 			role="navigation">
-			<a class="navbar-brand" href="/" style="overflow: visible">DySumar</a>
+			<a class="navbar-brand" href="/" style="overflow: visible">ProfesorTool</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				aria-label="Toggle navigation" data-target="#collapseElements">
 				<span class="navbar-toggler-icon"></span>
@@ -224,7 +224,7 @@
 	<footer th:fragment="footer" class="container"
 		style="background-color: #0B243B; color: white;">
 		<hr />
-		<img th:src="@{/images/logo.jpeg}" alt="Spring logo" />
+<!-- 		<img th:src="@{/images/logo.jpeg}" alt="Spring logo" /> -->
 		<p sec:authorize="isAuthenticated()">
 			Usuario logeado: <span sec:authentication="name"></span> | Roles: <span
 				sec:authentication="principal.authorities"></span>

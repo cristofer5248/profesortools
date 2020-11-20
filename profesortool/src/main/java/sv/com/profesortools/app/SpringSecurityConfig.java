@@ -26,7 +26,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
 	private JpaUserDetailsService userDetailsService;
 	
-/*	
+
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests().antMatchers("/","/css/***","/js/***","/images/***", "/listar","/productos/listar","/notificaciones/","/giro/giroExpress").permitAll()
@@ -44,7 +44,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 				
 	}
 
-*/
+/*
 	//aqui habilitamos el acceso al h2
 	@Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
@@ -53,6 +53,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
         httpSecurity.csrf().disable();
         httpSecurity.headers().frameOptions().disable();
     }
+*/
 	
 	@Autowired
 	public void ConfigurerGlobal(AuthenticationManagerBuilder build) throws Exception {

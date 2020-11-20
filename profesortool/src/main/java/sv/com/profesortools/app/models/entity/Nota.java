@@ -1,16 +1,14 @@
 package sv.com.profesortools.app.models.entity;
 
 import java.io.Serializable;
-import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
@@ -27,9 +25,34 @@ public class Nota implements Serializable {
 	@Size(max = 8)
 	private String codigo;
 	
-	@OneToMany(mappedBy="nota", fetch= FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
-	private List<Periodo> periodo;
+	@ManyToOne(fetch = FetchType.LAZY)
+	private Periodo periodo;
 	
 	private static final long serialVersionUID = 1L;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(String codigo) {
+		this.codigo = codigo;
+	}
+
+	public Periodo getPeriodo() {
+		return periodo;
+	}
+
+	public void setPeriodo(Periodo periodo) {
+		this.periodo = periodo;
+	}
+	
 
 }

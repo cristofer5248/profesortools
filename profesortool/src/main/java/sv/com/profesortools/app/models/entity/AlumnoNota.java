@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class AlumnoPeriodo implements Serializable {
+public class AlumnoNota implements Serializable {
 
 	
 
@@ -22,7 +22,7 @@ public class AlumnoPeriodo implements Serializable {
 	private Alumno alumno;
 	
 	@ManyToOne(fetch =FetchType.LAZY )
-	private Periodo periodo;
+	private Nota nota;
 	
 	private double total;
 	
@@ -49,13 +49,15 @@ public class AlumnoPeriodo implements Serializable {
 	}
 
 
-	public Periodo getPeriodo() {
-		return periodo;
+
+
+	public Nota getNota() {
+		return nota;
 	}
 
 
-	public void setPeriodo(Periodo periodo) {
-		this.periodo = periodo;
+	public void setNota(Nota nota) {
+		this.nota = nota;
 	}
 
 
