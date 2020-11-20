@@ -12,7 +12,6 @@
 	<groupId>sv.com.profesortools</groupId>
 	<artifactId>profesortool</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
 	<name>profesortool</name>
 	<description>Esto es una app para los maestros, para que dejen de usar excel</description>
 
