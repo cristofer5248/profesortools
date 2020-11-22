@@ -1,0 +1,2 @@
+insert into users values (1,'Maldonado','cristofr5248@gmail.com','Confidencial',1,null,'Christopher','$2a$10$5pUfPHJS0TVwfGA3UmxWje2spgL/Fm2Bzxu4OkgZ33sgM5Zbe1I1C','71208113','admin')
+insert into ROLES values(1,'ROLE_ADMIN',1)

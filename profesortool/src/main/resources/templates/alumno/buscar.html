@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head th:replace="layout/layout :: head"></head>
+<link rel="stylesheet" th:href="@{/css/searchbar.css}" />
+<body>
+
+	<header th:replace="layout/layout :: header"></header>
+
+	<div class="container py-4">
+
+		<div class="card bg-light">
+			<label class="h2" th:text="${titulo}"></label>
+			<div class="card-header" style="padding: .10rem 1.25rem">
+
+
+				<form class="searchbox" id="formsearch" action="">
+					<input type="search"
+						placeholder="Introducir parametro de busqueda......"
+						class="searchbox-input" onkeyup="buttonUp();" id="btn-search"
+						required> <select class="custom-select mr-sm-2"
+						id="opcSearch" style="margin-left: 10px; height: 3.3em;">
+						<option value="nombre">Nombre</option>
+						<option value="codigo">ID</option>
+					</select> <input type="button" id="vamonos" class="searchbox-submit"
+						value="GO" /> <span class="searchbox-icon">Buscar</span>
+				</form>
+			</div>
+			<div class="card-body">
+
+				<div class="card-title">
+					<a sec:authorize="hasAnyRole('ROLE_ADMIN','ROLE_SELLER')"
+						th:href="@{/alumno/nuevo}" class="btn btn-primary btn-xs">crear
+						alumno</a>
+				</div>
+				
+	
+
+			</div>
+		</div>
+
+
+	</div>
+
+	<footer th:replace="layout/layout :: footer"></footer>
+	<input type="hidden" id="urlAjaxcliente"
+		th:value="@{/cargar_direcciones/}" />
+	<input type="hidden" id="urlAjaxvercliente" th:value="@{/vercliente/}" />
+	<input type="hidden" id="urlAjaxEditarCliente"
+		th:value="@{/clienteform/}" />
+	<input type="hidden" id="urlenviar" th:value="@{/clientes/}" />
+	<input type="hidden" id="urlAjaxEditarClienteD"
+		th:value="@{/cdleliminar/}" />
+	<script th:replace="alumno/js/autocomplete :: javascript"></script>
+	<script th:src="@{/js/searchbar.js}"></script>
+	<script>
+		function prueba() {
+			alert('f');
+		}
+	</script>
+</body>
+</html>
